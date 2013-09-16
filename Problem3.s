@@ -1,3 +1,5 @@
+# Prompts for a value of n.  If within the range of the alphabet (1-26),
+# then it returns the corresponding letter.  Otherwise, it returns '?'
          .data
 prompt:  .asciiz    "Enter the value of n here: "
 reply:   .asciiz    "The letter is: "
@@ -15,16 +17,16 @@ main:
          slt        $t3, $zero, $t1
                                  # If 0 < $t1, then $t4 = 1. Else $t4 = 0
          beq        $t3, $zero, fail
-                                 # Go to fail block if $t1 outside range
+                                 # Go to fail block if $t1 is below range
          slt        $t3, $t1, $t2
                                  # If $t1 < 27, then $t4 = 1. Else $t4 = 0
          beq        $t3, $zero, fail
-                                 # Go to fail block if $t1 outside range
+                                 # Go to fail block if $t1 is above range
 
 success: li         $v0, 4       # System call code for print_string
          la         $a0, reply   # Load the address of the reply
          syscall                 # Print the reply
-         addi       $t1, $t1, 64 # Offset to ASCII alphabet start
+         addi       $t1, $t1, 64 # Offset $t1 to ASCII alphabet start
          li         $v0, 11      # System call code for print_char
          move       $a0, $t1     # Pass the character code as an arg
          syscall                 # Print the letter

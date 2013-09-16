@@ -1,3 +1,4 @@
+# Prints the author's name (stored as a string in the data section)
          .data
 myName:  .asciiz    "Alexander Starr"
          .globl     main

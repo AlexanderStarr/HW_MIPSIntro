@@ -1,3 +1,4 @@
+# Prints the ASCII representation of the array of integers in the data section.
          .data
 array:   .word      9, 72, 101, 108, 108, 111, 13, 10, 0
 nline:   .asciiz    "\n"
