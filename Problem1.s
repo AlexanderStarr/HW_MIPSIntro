@@ -10,3 +10,4 @@ main:
 
          li         $v0, 10      # System call code for exit 
          syscall                 # Return control to system
+

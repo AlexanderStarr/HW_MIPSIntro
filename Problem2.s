@@ -21,3 +21,4 @@ loop:    beq        $t1, $zero, exit
 
 exit:    li         $v0, 10       # System call code for exit 
          syscall                  # Return control to system
+

@@ -38,3 +38,4 @@ fail:    li         $v0, 4       # System call code for print_string
 
 exit:    li         $v0, 10      # System call code for exit
          syscall                 # Return control to the system
+
